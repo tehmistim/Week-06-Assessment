@@ -5,7 +5,6 @@
   "main": "server.js",
   "scripts": {
     "test": "jest",
-    "start": "node Assessment/public/index.js",
     "server": "nodemon server.js"
   },
   "keywords": [],
