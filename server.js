@@ -42,13 +42,8 @@ app.get('/server.js', (req, res) => {
     res.sendFile(path.join(__dirname, '../Assessment/server.js'));
 });
 
-app.get('/utils.js', (req, res) => {
-    res.sendFile(path.join(__dirname, '../Assessment/utils.js'));
-});
 
-app.get('/data.js', (req, res) => {
-    res.sendFile(path.join(__dirname, '../Assessment/data.js'));
-});
+
 
 // server.use('/Assessment/public/index.js', express.static(path.join(__dirname, '../Assessment/public/index.js')));
 
