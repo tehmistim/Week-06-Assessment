@@ -1,7 +1,7 @@
 {
   "name": "rollbar-test",
   "version": "1.0.0",
-  "description": "",
+  "description": "Duel Duo",
   "main": "server.js",
   "scripts": {
     "test": "jest",
@@ -24,5 +24,13 @@
     "ts-jest": "^27.0.7",
     "ts-node": "^10.4.0",
     "typescript": "^4.4.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tehmistim/Week-06-Assessment.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tehmistim/Week-06-Assessment/issues"
+  },
+  "homepage": "https://github.com/tehmistim/Week-06-Assessment#readme"
 }

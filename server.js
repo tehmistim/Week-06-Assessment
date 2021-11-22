@@ -6,6 +6,14 @@ const {shuffleArray} = require('./utils');
 
 const port = process.env.PORT || 3000
 
+var Rollbar = require('rollbar')
+var rollbar = new Rollbar({
+  accessToken: 'f0f6a8f67331439c80816c7163917013',
+  captureUncaught: true,
+  captureUnhandledRejections: true,
+});
+
+rollbar.log('WE ROLLIN!')
 
 app.use(express.json());
 
@@ -46,6 +54,7 @@ app.get('/data.js', (req, res) => {
 
 app.get('/api/robots', (req, res) => {
     try {
+        rollbar.info('SOMEONE SNAGGIN DATA')
         res.status(200).send(botsArr)
     } catch (error) {
         console.log('ERROR GETTING BOTS', error)
@@ -55,6 +64,7 @@ app.get('/api/robots', (req, res) => {
 
 app.get('/api/robots/five', (req, res) => {
     try {
+        rollbar.warning(`Chyyyyle they playin' with these bots`)
         let shuffled = shuffleArray(bots)
         let choices = shuffled.slice(0, 5)
         let compDuo = shuffled.slice(6, 8)
@@ -67,6 +77,7 @@ app.get('/api/robots/five', (req, res) => {
 
 app.post('/api/duel', (req, res) => {
     try {
+        rollbar.critical('THEY FIGHTIN!')
         // getting the duos from the front end
         let {compDuo, playerDuo} = req.body
 
@@ -98,6 +109,7 @@ app.post('/api/duel', (req, res) => {
 
 app.get('/api/player', (req, res) => {
     try {
+        rollbar.info('SOMEONE SNAGGIN DATA')
         res.status(200).send(playerRecord)
     } catch (error) {
         console.log('ERROR GETTING PLAYER STATS', error)
